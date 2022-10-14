@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mysql-driveyourway:
+    image: mysql:latest
+    container_name: mysql-driveyourway
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin@root
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=driveyourway
+  springboot-docker-container:
+    image: springboot-driveyourway
+    container_name: springboot-driveyourway
+    ports:
+      - 9090:5555
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql-driveyourway
