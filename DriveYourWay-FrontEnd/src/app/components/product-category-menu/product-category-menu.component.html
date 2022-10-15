@@ -1,0 +1,46 @@
+<div class="menu-sidebar-content js-scrollbar1">
+    <nav  class="navbar-sidebar">
+        <ul class="list-unstyled navbar-list">
+            <br>
+            <li style="margin-left:-17px;font-size:27px; font-family:unset"> Filter </li>
+            <br>
+            <li style="margin-left:-17px;font-size:22px; font-family:unset">Body Type</li>
+            <br>
+            
+            <li style="line-height: 2.3;">
+                
+                <i class="fa fa-angle-double-right" style="font-size:14px"></i>
+                <a style="text-decoration:none" routerLink="/category" [ngClass]="{'active-link':clicked}"  (click)="Clicked()">
+                 Show All
+                </a>
+
+            </li>
+
+            
+
+            <li style="line-height: 2.3;" *ngFor="let tempProductCategory of productCategories">
+                <i class="fa fa-angle-double-right" style="font-size:14px"></i>
+                <a style="text-decoration:none" routerLink="/category/{{ tempProductCategory.id }}" routerLinkActive="active-link" (click)="UnClicked()">
+                    {{ tempProductCategory.car_name }}
+                </a>
+
+                <br>
+
+            </li>
+            <br>
+            <li>
+                <button *ngIf="username != 'admin'"  routerLink="/add-product"    class="au-btn-sub">Sell Your Car</button>
+                 
+
+            </li>
+            <br>
+
+            <li>
+                <button *ngIf="username == 'admin'"  routerLink="/add-product"    class="au-btn-sub">Add Model</button>
+                 
+
+            </li>
+        
+        </ul>
+    </nav>
+</div>

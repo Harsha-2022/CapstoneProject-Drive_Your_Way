@@ -1,0 +1,11 @@
+.detail-img{
+    height: 444px;
+    min-width: fit-content;
+}
+.fluid{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 62px;
+    margin-right: auto;
+    margin-left: auto;
+}

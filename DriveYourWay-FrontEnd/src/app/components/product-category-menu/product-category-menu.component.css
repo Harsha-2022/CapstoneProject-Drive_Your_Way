@@ -1,0 +1,19 @@
+.au-btn-sub{
+    font-weight: 500;
+    font-family:'Lucida Sans';
+    position: relative;
+    right: 10px;
+    /* left: 10px; */
+    min-width: 137px;
+    color: #fff;
+    border-radius: 177px;
+    background:black;
+    min-height: 40px;
+}
+#cart{
+    justify-content: center;
+}
+.au-btn-sub:hover{
+    background:white;
+    color: #000;
+}

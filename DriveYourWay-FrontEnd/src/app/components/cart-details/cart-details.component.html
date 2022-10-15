@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+
+            <div *ngIf="username == null" class="alert alert-danger col-md-12" role="alert">
+                You need to be registered in the system. 
+            </div>
+
+            <div *ngIf="username != null && cartItems.length > 0">
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="font-size: 18px" width="20%" >Car Image </th>
+                        <th style="font-size: 18px" width="50%">Brand & Model</th>
+                        <th style="font-size: 18px" width="20%">Status</th>
+                    </tr>
+
+                    <tr *ngFor="let tempCartItem of cartItems">
+                        <td>
+                            <img src="{{ tempCartItem.imageUrl }}" class="img-responsive" width="150px" />
+                        </td>
+                        <td>
+                            <p  style="font-size: 18px">{{ tempCartItem.name }}</p>
+                            <p style="font-size: 18px">{{ tempCartItem.unitPrice | currency: 'USD' }}</p>
+                        </td>
+                        <td>
+                            <br>
+
+                            <button (click)="remove(tempCartItem)" class="au-btn-submit" style=" border:white; width:150px; height: 40px; background: red; color: white; font-size: 17px;"  >Cancel Booking</button>
+
+                            <p class="mt-2"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2"></td>
+                        <td style="font-weight: bold">
+                            <p style="font-size: 18px">Model Price: {{ totalPrice | currency: 'USD' }}</p>
+                            <a (click)="getTotalPrice()" routerLink="/checkout"><button class="au-btn-submit" style=" border:rgb(0, 0, 0); width: 170px; height: 45px; background:#000000; color: white; font-size: 17px;"  >Confirm Test Drive</button></a>
+                            
+                            <br>
+                        </td>
+                    </tr>
+
+                </table>
+
+
+
+            </div>
+
+            <!-- if cart is empty then display a message -->
+            <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12" role="alert">
+                Book Your Test Drive Now!
+            </div>
+            <a routerLink="/products" class="mt-5" style="color:orangered ;font-size: 17px;">Go Back to Home Page</a>
+
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<br><br>
+<div class="login-form" style="width:44%" >
+    <form   (ngSubmit) = "updateProduct()">
+        <h2 class="text-center">Update Model</h2>       
+        <div style="color: black;" class="form-group">
+            Name:<input [(ngModel)] = "product.name" name = "name" type="text" class="form-control" placeholder={{product.name}} required="required">
+        </div>
+        <br>
+        <div style="color: black;" class="form-group">
+            Seller:<input [(ngModel)] = "product.seller" name = "seller" type="text" class="form-control"   required="required">
+        </div>
+        <br>
+        <div style="color: black;"class="form-group">
+            Contact Details:<input [(ngModel)] = "product.phone" name = "phone" type="number" class="form-control"   required="required">
+        </div>
+        <br>
+        <div style="color: black;" class="form-group">
+            Description:
+            <input [(ngModel)] = "product.description" name = "description" type="text" class="form-control" placeholder={{product.description}} required="required" >
+        </div>
+        <br>
+        <div style="color: black;" class="form-group">
+            Price:
+            <input [(ngModel)] = "product.price" name = "price" type="text" class="form-control" placeholder={{product.price}} required="required">
+        </div>
+        <br>
+        <div style="color: black;" class="form-group">
+            Image URL:
+            <input [(ngModel)] = "product.imageUrl" name = "imageUrl" type="text" class="form-control" placeholder={{product.imageUrl}} required="required">
+        </div>
+        <br>
+        <div style="color: black;" class="form-group">
+            Body-Type:
+            <br>
+            <select [(ngModel)]="product.car" name = "car">
+                <option *ngFor="let car of productCars" [ngValue]="car.id">{{car.car_name}}</option>
+            </select>
+             
+        </div>
+
+        <br>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">Update</button>
+        </div>
+               
+    </form>
+    <p class="text-center"><a routerLink="/login">Back to Login</a></p>
+</div>

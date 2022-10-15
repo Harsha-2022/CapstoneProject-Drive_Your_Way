@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<div class="cart-area d-n">
+    <a routerLink="/cart-details">
+        <div *ngIf="username != 'admin'" class="total">Your Bookings
+            <span>{{ totalQuantity }}</span> 
+            
+        </div> 
+        <i *ngIf="username != 'admin'"  style="font-size:30px" class="fas fa-car"></i>
+    </a>
+</div>

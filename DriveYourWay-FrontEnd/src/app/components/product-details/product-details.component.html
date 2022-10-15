@@ -1,0 +1,26 @@
+<div class="detail-section">
+    <div class="fluid">
+        <div *ngIf="username == null" class="alert alert-danger col-md-12" role="alert">
+            You need to be registered in the system. 
+        </div>
+
+        <div *ngIf="username != null">
+        <h3>{{ product.name }}</h3>
+        <br>
+        <img src="{{ product.imageUrl }}" class="detail-img">
+        <br>
+        <br>
+        <p style="color: black">Seller: {{ product.seller }}</p>
+        <p style="color: black">Contact: {{ product.phone }}</p>
+        <div class="price" style="color:black">Price: {{ product.price | currency:'USD' }}</div>
+        <button routerLink="/verification" class="btn btn-primary btn-sm" style="background:black; color:white; border: black; width:150px;" >Edit Details</button>
+        <br>
+        <br>
+        <button (click)="addToCart()" class="btn btn-primary btn-sm" style="background:black; color:white; border: black; width:150px;" >Book For Test Drive</button>
+        <hr>
+        <h4 style="color:rgb(0, 0, 0)" >Description</h4>
+        <p style="color:rgb(0, 0, 0)">{{ product.description }}</p>
+
+        <a routerLink="/products" class="mt-5" style="color: rgb(255, 64, 0);">Back to Home Page</a>
+    </div>
+</div>
